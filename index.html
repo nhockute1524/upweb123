@@ -1,237 +1,37 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+  </head>
 
-<!-- Tên trang web -->
-<title>Yêu Pé Linh</title>
-<script>
-    //Thay phần kịch bản bằng kịch bản của bạn
-    var kichban = [
-        ['Linh à, anh có điều muốn nói','Anh nói đi'],
-        ['Anh muốn hỏi em là:..','Đừng ngại, anh cứ nói đi :>']
-    ]
-    //Thay loiToTinh bằng lời tỏ tình của bạn
-    var loiToTinh = 'Linh có yêu anh không?'
-    //Thay lời xác nhận bằng lời xác nhận của bạn
-    var xacnhan = 'Anh cũng yêu em :>';
-    //Tốc độ in chữ ra
-    var tocDo = 50;
-    //Khi chọn Không thì sẽ thông báo ra:
-    var khiChonKhong = 'Hư quá nè ! chọn nút kia đi!'
-    //Link ảnh chèn vào web
-    var linkImg = 'https://i.imgur.com/pcFK6Jt.jpg'
-    //Link đến mess hay fb của bạn
-    var linkToMess = 'https://javhd.ws/'
-</script>
-
-
-<style>
-/* .button-55{
-    transform: translateX(100px);
-} */
-.hidden{
-    display: none;
-}
-.btn{
-    align-self: center;
-  background-color: #fff;
-  background-image: none;
-  background-position: 0 90%;
-  background-repeat: repeat no-repeat;
-  background-size: 4px 3px;
-  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
-  border-style: solid;
-  border-width: 2px;
-  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
-  box-sizing: border-box;
-  color: #41403e;
-  display: inline-block;
-  font-family: Neucha, sans-serif;
-  font-size: 1rem;
-  line-height: 23px;
-  outline: none;
-  padding: .75rem;
-  text-decoration: none;
-  transition: all 235ms ease-in-out;
-  border-bottom-left-radius: 15px 255px;
-  border-bottom-right-radius: 225px 15px;
-  border-top-left-radius: 255px 15px;
-  border-top-right-radius: 15px 225px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-.button-55 {
-  align-self: center;
-  background-color: #fff;
-  background-image: none;
-  background-position: 0 90%;
-  background-repeat: repeat no-repeat;
-  background-size: 4px 3px;
-  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
-  border-style: solid;
-  border-width: 2px;
-  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
-  box-sizing: border-box;
-  color: #41403e;
-  cursor: pointer;
-  display: inline-block;
-  font-family: Neucha, sans-serif;
-  font-size: 1rem;
-  line-height: 23px;
-  outline: none;
-  padding: .75rem;
-  text-decoration: none;
-  transition: all 235ms ease-in-out;
-  border-bottom-left-radius: 15px 255px;
-  border-bottom-right-radius: 225px 15px;
-  border-top-left-radius: 255px 15px;
-  border-top-right-radius: 15px 225px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.button-55:hover {
-  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
-  transform: translate3d(0, 2px, 0);
-}
-
-.button-55:focus {
-  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
-}
-</style>
-</head>
-
-<body style="background-color: #ffb6ba;">
-<div id="kichban" style="width: 100%;display: flex;justify-content: center;">
-    <div id="ques" style="margin-top:10rem;padding: 20px;box-shadow: rgba(42, 42, 43, 0.2) 0px 7px 29px 0px;width:30rem;background-color: #bbd1ff;" class="btn">
-        <h1 id="titleKichBan"></h1>
-        <div class="ans" style="display: flex;justify-content: space-evenly;">
-            <a id="ansKichBan" class="button1" onclick="next()" style="transition: 1s;">
-                
-            </a>
-        </div>
+  <body>
+    <!-- <audio autoplay="autopaly">
+      <source src="renxi.mp3" type="audio/mp3" />
+    </audio> -->
+    <!-- 星空html -->
+    <!-- <div> -->
+    <div class="container2">
+      <div class="content">
+        <canvas id="universe"></canvas>
+      </div>
     </div>
-</div>
-<div id="mainQues" style="transform: translateY(-100rem);width: 100%;display: flex;justify-content: center;">
-    <div id="ques" style="margin-top:10rem;padding: 20px;box-shadow: rgba(42, 42, 43, 0.2) 0px 7px 29px 0px;width:30rem;background-color: #bbd1ff;" class="btn">
-        <h1 id="loiToTinh"></h1>
-        <div class="ans" style="display: flex;justify-content: space-evenly;">
-            <a id="hate" class="button1" onclick="hate()" style="transition: 1s;">
-                <button class="button-55" role="button">Không đâu</button>
-            </a>
-            <a id="start" class="button1" onclick="typeWriter()">
-                <button class="button-55" role="button">Có ạ</button>
-            </a>
-        </div>
+    <!-- </div> -->
+    <div class="title">
+      <!-- EDIT HERE -->
+      <h3 class="STARDUST1">2022</h3>
+      <h1 class="STARDUST2">Hoàng Thiên &amp; Lan Linh</h1>
+      <h3 class="STARDUST3">L O V E <strong>❤</strong> Y O U</h3>
+      <img class="img" src="linh.jpg" alt="JUNO_OKYO" />
+      <canvas id="pinkboard"></canvas>
     </div>
-</div>
-<br/>
-<div class="a" style="margin:0 10rem;">
-<h1 id="main" class="btn" class="hidden">
-</h1>
 
-
-<div id="result">
-<!-- Thay phần thẻ pre này bằng html ảnh của bạn -->
-
-<!---->
-
-</div>
-<div id="linkToFB" style="display:none"></div>
-</div>
-
-<script>
-    document.getElementById("result").style.width="fit-content"
-    document.getElementById("result").style.display="none"
-    document.getElementById("result").innerHTML = `<img id="anh" src="${linkImg}" alt="">`
-
-var i = 0;
-var l=0,k=0;
-
-function typeKichban() {
-
-    // document.getElementById("start").style.display="none"
-    if (l < kichban[0][0].length) {
-        document.getElementById("titleKichBan").innerHTML += kichban[0][0].charAt(l);
-        l++;
-        setTimeout(typeKichban, tocDo );
-    }else{
-        setTimeout(()=>{
-            document.getElementById("ansKichBan").innerHTML = `<button class="button-55" role="button">${kichban[0][1]}</button>`
-        }, tocDo );
-    }
-}
-typeKichban()
-document.getElementById("ansKichBan").onmousedown=()=>{i=0;k+=1;l=0;document.getElementById("titleKichBan").innerHTML="";next()}
-function next() {
-
-    // document.getElementById("start").style.display="none"
-    if (l < kichban[0][0].length) {
-        document.getElementById("titleKichBan").innerHTML += kichban[1][0].charAt(l);
-        l++;
-        setTimeout(next, tocDo );
-    }else{
-        setTimeout(()=>{
-            document.getElementById("ansKichBan").innerHTML = `<button class="button-55" role="button">${kichban[1][1]}</button>`
-        }, tocDo );
-    }
-    if(k==2){
-        document.getElementById("kichban").style.transition="2s"
-        document.getElementById("kichban").style.transform="translateY(-100rem)"
-        k+=1;
-    }if(k==3){
-        setTimeout(()=>{
-            document.getElementById("mainQues").style.transform="translateY(-20rem)"
-        }, 1000 );
-        setTimeout(()=>{
-            typer()
-        }, 1000 );
-        
-    }
-}
-
-function hate() {
-    alert(khiChonKhong)
-}
-var n=0;
-function typer() {
-    // document.getElementById("start").style.display="none"
-    if (n < loiToTinh.length) {
-        document.getElementById("loiToTinh").innerHTML += loiToTinh.charAt(n);
-        n++;
-        setTimeout(typer, tocDo );
-    }
-}
-
-function typeWriter() {
-    document.getElementById("hate").style.display="none"
-    document.getElementById("ques").style.display="none"
-    document.getElementById("mainQues").style.display="none"
-    document.getElementById("main").classList.remove("hidden")
-    document.getElementById("ques").style.marginTop="0"
-    // document.getElementById("start").style.display="none"
-    if (i < xacnhan.length) {
-        document.getElementById("main").innerHTML += xacnhan.charAt(i);
-        i++;
-        setTimeout(typeWriter, tocDo );
-    }else {
-        document.getElementById("result").style.display="block"
-        document.getElementById("linkToFB").style.display="block"
-    }
-}
-document.getElementById("hate").onmouseover=()=>{
-    // document.getElementById("hate").style.position="fixed"
-    document.getElementById("hate").style.transform=`translate(${(Math.floor(Math.random() * 4)?Math.floor(Math.random() * 4):1)*100}px,${Math.floor(Math.random() * 4)*100}px)`
-}
-
-document.getElementById("linkToFB").innerHTML=
-`   <a href='${linkToMess}'>
-        <button class="button-55" role="button">Mãi là Vk hư của Anh nhé !:></button>
-    </a>`
-
-</script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/particle.js"></script>
+    <script src="js/universe.js"></script>
+  </body>
 </html>
