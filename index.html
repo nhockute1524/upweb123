@@ -1,37 +1,44 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-  </head>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="style.css">
+      <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+      <title>Together</title>
+</head>
+<body>
+     <div id="wrapper">
+           <h1>LOVE DAYS</h1>
 
-  <body>
-    <!-- <audio autoplay="autopaly">
-      <source src="renxi.mp3" type="audio/mp3" />
-    </audio> -->
-    <!-- 星空html -->
-    <!-- <div> -->
-    <div class="container2">
-      <div class="content">
-        <canvas id="universe"></canvas>
-      </div>
-    </div>
-    <!-- </div> -->
-    <div class="title">
-      <!-- EDIT HERE -->
-      <h3 class="STARDUST1">2022</h3>
-      <h1 class="STARDUST2">Hoàng Thiên &amp; Lan Linh</h1>
-      <h3 class="STARDUST3">L O V E <strong>❤</strong> Y O U</h3>
-      <img class="img" src="linh.jpg" alt="JUNO_OKYO" />
-      <canvas id="pinkboard"></canvas>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/particle.js"></script>
-    <script src="js/universe.js"></script>
-  </body>
+           <div id="clock-box">
+                 <div id="clock">
+                       <date>0 DAYS</date>
+                       <time>00:00:00</time>
+                  </div>
+            </div>
+            
+            <div id="info">
+                  <div class="one">
+                        <img src="img/ht.jpg" class="avt">
+                        <p>Hoàng Thiên</p>
+                  </div>
+                  <div id="heart">
+                        ❤<anni>...</anni>
+                  </div>
+                  <div class="two">
+                        <img src="img/py.jpg" class="avt">
+                        <p>Phi Yến</p>
+                  </div>
+            </div>
+            
+            <div id="music">
+                  <audio loop autoplay controls>Your browser does not support the audio element.</audio>
+            </div>
+            <footer>Thank you for your love 💕</footer>
+      </div> 
+      
+      <script src="app.js"></script>
+</body>
 </html>
